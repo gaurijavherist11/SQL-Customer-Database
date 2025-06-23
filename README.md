@@ -1,5 +1,6 @@
 # SQL-Customer-Database
-
+firstly create a database:
+query: CREATE DATABASE gauridb1;
 # Customer Orders Schema
 
 This project contains a sample SQL schema for managing a customer order system. It includes customers, products, orders, payments, and order items.
