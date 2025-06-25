@@ -1,6 +1,5 @@
-# 🛒 E-Commerce MySQL Database – gauridb1
-
-This project demonstrates a simple e-commerce backend database using **MySQL**, designed as part of an internship task. It covers the complete flow from customer registration, order placement, product management, and payments.
+# 👤 Customers Table – E-Commerce MySQL Database (gauridb1)
+---
 
 ## 📂 Database Name
 
@@ -8,24 +7,70 @@ This project demonstrates a simple e-commerce backend database using **MySQL**, 
 
 ---
 
-## 📋 Tables Included
+## 📋 Table: Customers
 
-- **Customers**: Stores buyer information including name, contact, and city.
-- **Products**: Contains the catalog with product names and prices.
-- **Orders**: Tracks each order placed by a customer.
-- **Payments**: Records payment details per order.
-- **OrderItems**: Links orders to products, with quantity per item.
+The `Customers` table stores the personal information of buyers, including their contact details and location.
 
----
+### 🧱 Structure
 
-## 🔗 Table Relationships
+| Column Name | Data Type    | Description                         |
+|-------------|--------------|-------------------------------------|
+| customer_id | INT (PK)     | Unique customer ID (auto-increment) |
+| name        | VARCHAR(100) | Full name of the customer           |
+| email       | VARCHAR(100) | Email address (unique)              |
+| phone       | VARCHAR(15)  | Contact number                      |
+| city        | VARCHAR(50)  | City of residence                   |
 
-- Each **Customer** can place many **Orders**.
-- Each **Order** is linked to one **Payment**.
-- Each **Order** can contain multiple **OrderItems**.
-- Each **OrderItem** refers to one **Product**.
+### 💻 SQL Definition
 
----
+```sql
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(15),
+    city VARCHAR(50)
+);
+🔗 Table Relationship
+A single Customer can place multiple Orders
 
-## 📊 Entity Relationship Diagram (ERD)
+This relationship is defined using the customer_id foreign key in the Orders table.
+
+📊 Entity Relationship Diagram (ERD) – Customers Table
+mermaid
+Copy
+Edit
+erDiagram
+    Customers ||--o{ Orders : places
+
+    Customers {
+        INT customer_id PK
+        VARCHAR name
+        VARCHAR email
+        VARCHAR phone
+        VARCHAR city
+    }
+
+    Orders {
+        INT order_id PK
+        INT customer_id FK
+        DATE order_date
+    }
+🧪 Sample Queries
+🔍 View All Customers
+sql
+Copy
+Edit
+SELECT * FROM Customers;
+🔍 Customers from a Specific City
+sql
+Copy
+Edit
+SELECT * FROM Customers WHERE city = 'Delhi';
+
+🛠 Tools Used
+MySQL Workbench
+GitHub
+
+📊 ER Diagram – Customers Domain
 file:///C:/Users/gauri/Downloads/ER-Diagram_of_customerdb.pdf
