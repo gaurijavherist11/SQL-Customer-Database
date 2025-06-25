@@ -1,4 +1,7 @@
 # 👤 Customers Table – E-Commerce MySQL Database (gauridb1)
+
+This document highlights the **Customers** domain within the `gauridb1` MySQL e-commerce database. It captures essential buyer details and their direct relationship with the order system.
+
 ---
 
 ## 📂 Database Name
@@ -9,42 +12,46 @@
 
 ## 📋 Table: Customers
 
-The `Customers` table stores the personal information of buyers, including their contact details and location.
+The **Customers** table is responsible for storing user information such as their full name, email, phone number, and city. It includes unique identifiers for each customer and supports optional fields like phone and city to allow flexibility in data entry.
 
-### 🧱 Structure
+---
 
-| Column Name | Data Type    | Description                         |
-|-------------|--------------|-------------------------------------|
-| customer_id | INT (PK)     | Unique customer ID (auto-increment) |
-| name        | VARCHAR(100) | Full name of the customer           |
-| email       | VARCHAR(100) | Email address (unique)              |
-| phone       | VARCHAR(15)  | Contact number                      |
-| city        | VARCHAR(50)  | City of residence                   |
+## 🔗 Table Relationship
 
-### 💻 SQL Definition
+Each customer can place **multiple orders**, establishing a one-to-many relationship with the **Orders** table. This linkage ensures that the database can track purchases made by any individual customer efficiently.
 
-```sql
-CREATE TABLE Customers (
-    customer_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE,
-    phone VARCHAR(15),
-    city VARCHAR(50)
-);
-🔗 Table Relationship
-A single Customer can place multiple Orders.
-This relationship is defined using the customer_id foreign key in the Orders table.
+---
 
-🧪 Sample Queries
-🔍 View All Customers
-SELECT * FROM Customers;
+## 🧪 Sample Use Cases
 
-🔍 Customers from a Specific City
-SELECT * FROM Customers WHERE city = 'Delhi';
+- Viewing the complete list of customers.
+- Filtering customers by city or location.
+- Checking which customers have placed orders.
+- Performing analysis like customer count per city or activity level.
 
-🛠 Tools Used
-MySQL Workbench
-GitHub
+---
+
+## 🛠 Tools Used
+
+- **MySQL Workbench** – for designing and managing the database structure.
+- **GitHub** – for version control and project sharing.
+
+---
+
+## 📊 ER Diagram – Customers Domain
+
+The structure and relationship of the **Customers** table can be viewed in the ER diagram linked below:
+
+👉 [View ER Diagram on Google Drive](https://drive.google.com/file/d/1FpOU3emMp9F2mW6cRYy51ftZwEjz3O3U/view?usp=sharing)
+
+---
+
+## 🙋‍♀️ Author
+
+**Gauri Milind Javheri**  
+Internship Project – Customers Table | `gauridb1`
+
+
 
 📊 ER Diagram – Customers Domain
 https://drive.google.com/file/d/1FpOU3emMp9F2mW6cRYy51ftZwEjz3O3U/view?usp=sharing
