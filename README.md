@@ -45,13 +45,3 @@ The structure and relationship of the **Customers** table can be viewed in the E
 👉 [View ER Diagram on Google Drive](https://drive.google.com/file/d/1FpOU3emMp9F2mW6cRYy51ftZwEjz3O3U/view?usp=sharing)
 
 ---
-
-## 🙋‍♀️ Author
-
-**Gauri Milind Javheri**  
-Internship Project – Customers Table | `gauridb1`
-
-
-
-📊 ER Diagram – Customers Domain
-https://drive.google.com/file/d/1FpOU3emMp9F2mW6cRYy51ftZwEjz3O3U/view?usp=sharing
