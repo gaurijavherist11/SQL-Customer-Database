@@ -32,40 +32,14 @@ CREATE TABLE Customers (
     city VARCHAR(50)
 );
 🔗 Table Relationship
-A single Customer can place multiple Orders
-
+A single Customer can place multiple Orders.
 This relationship is defined using the customer_id foreign key in the Orders table.
 
-📊 Entity Relationship Diagram (ERD) – Customers Table
-mermaid
-Copy
-Edit
-erDiagram
-    Customers ||--o{ Orders : places
-
-    Customers {
-        INT customer_id PK
-        VARCHAR name
-        VARCHAR email
-        VARCHAR phone
-        VARCHAR city
-    }
-
-    Orders {
-        INT order_id PK
-        INT customer_id FK
-        DATE order_date
-    }
 🧪 Sample Queries
 🔍 View All Customers
-sql
-Copy
-Edit
 SELECT * FROM Customers;
+
 🔍 Customers from a Specific City
-sql
-Copy
-Edit
 SELECT * FROM Customers WHERE city = 'Delhi';
 
 🛠 Tools Used
