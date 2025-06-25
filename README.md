@@ -73,4 +73,4 @@ MySQL Workbench
 GitHub
 
 📊 ER Diagram – Customers Domain
-file:///C:/Users/gauri/Downloads/customer_schema19.sql
+https://drive.google.com/file/d/1FpOU3emMp9F2mW6cRYy51ftZwEjz3O3U/view?usp=sharing
